@@ -19,7 +19,7 @@ if (isset($_GET['table_name'])) {
                 $result2 = mysqli_query($con, "SELECT * FROM drugsturkey") or die(mysqli_error($con));
                 $result3 = mysqli_query($con, "SELECT * FROM drugsusa") or die(mysqli_error($con));
                 if (mysqli_num_rows($result1) > 0 || mysqli_num_rows($result2) > 0 || mysqli_num_rows($result3) > 0) {
-                    $response["success"] = "1";
+                    $response["success"] = 1;
                     $response["message"] = $messageAllOk;
                     $response["drugs"] = array();
                     while ($row = mysqli_fetch_array($result1)) {
@@ -48,7 +48,7 @@ if (isset($_GET['table_name'])) {
                     }
                     echo json_encode($response, JSON_UNESCAPED_UNICODE);
                 } else {
-                    $response["success"] = "0";
+                    $response["success"] = 0;
                     $response["message"] = $messageAllNotOk;
                     echo json_encode($response, JSON_UNESCAPED_UNICODE);
                 }
@@ -58,7 +58,7 @@ if (isset($_GET['table_name'])) {
             {
                 $result1 = mysqli_query($con, "SELECT * FROM drugsbel") or die(mysqil_error($con));
                 if (mysqli_num_rows($result1) > 0) {
-                    $response["success"] = "1";
+                    $response["success"] = 1;
                     $response["message"] = $messageDrugsbelOk;
                     $response["drugs"] = array();
                     while ($row = mysqli_fetch_array($result1)) {
@@ -71,7 +71,7 @@ if (isset($_GET['table_name'])) {
                     }
                     echo json_encode($response, JSON_UNESCAPED_UNICODE);
                 } else {
-                    $response["success"] = "0";
+                    $response["success"] = 0;
                     $response["message"] = $messageDrugsbelNotOk;
                     echo json_encode($response, JSON_UNESCAPED_UNICODE);
                 }
@@ -81,7 +81,7 @@ if (isset($_GET['table_name'])) {
             {
                 $result2 = mysqli_query($con, "SELECT * FROM drugsturkey") or die(mysqli_error($con));
                 if (mysqli_num_rows($result2) > 0) {
-                    $response["success"] = "1";
+                    $response["success"] = 1;
                     $response["message"] = $messageDrugsturkeyOk;
                     $response["drugs"] = array();
                     while ($row = mysqli_fetch_array($result2)) {
@@ -94,7 +94,7 @@ if (isset($_GET['table_name'])) {
                     }
                     echo json_encode($response, JSON_UNESCAPED_UNICODE);
                 } else {
-                    $response["success"] = "0";
+                    $response["success"] = 0;
                     $response["message"] = $messageDrugsturkeyNotOk;
                     echo json_encode($response, JSON_UNESCAPED_UNICODE);
                 }
@@ -104,7 +104,7 @@ if (isset($_GET['table_name'])) {
             {
                 $result3 = mysqli_query($con, "SELECT * FROM drugsusa") or die(mysqli_error($con));
                 if (mysqli_num_rows($result3) > 0) {
-                    $response["success"] = "1";
+                    $response["success"] = 1;
                     $response["message"] = $messageDrugsusaOk;
                     $response["drugs"] = array();
                     while ($row = mysqli_fetch_array($result3)) {
@@ -117,7 +117,7 @@ if (isset($_GET['table_name'])) {
                     }
                     echo json_encode($response, JSON_UNESCAPED_UNICODE);
                 } else {
-                    $response["success"] = "0";
+                    $response["success"] = 0;
                     $response["message"] = $messageDrugsusaNotOk;
                     echo json_encode($response, JSON_UNESCAPED_UNICODE);
                 }
@@ -125,13 +125,13 @@ if (isset($_GET['table_name'])) {
             }
         default:
             {
-                $response["success"] = "0";
+                $response["success"] = 0;
                 $response["message"] = $messageTableNotOk;
                 echo json_encode($response, JSON_UNESCAPED_UNICODE);
             }
     }
 } else {
-    $response["success"] = "0";
+    $response["success"] = 0;
     $response["message"] = $messageNotOk;
     echo json_encode($response, JSON_UNESCAPED_UNICODE);
 }

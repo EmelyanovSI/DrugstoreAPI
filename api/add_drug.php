@@ -35,16 +35,16 @@ if (isset($_GET['name']) && isset($_GET['composition']) && isset($_GET['country'
     $result = mysqli_query($con, $sql) or die(mysqli_error($con));
 
     if ($result) {
-        $response["success"] = "1";
+        $response["success"] = 1;
         $response["message"] = $created;
         echo json_encode($response, JSON_UNESCAPED_UNICODE);
     } else {
-        $response["success"] = "0";
+        $response["success"] = 0;
         $response["message"] = $notCreated;
         echo json_encode($response, JSON_UNESCAPED_UNICODE);
     }
 } else {
-    $response["success"] = "0";
+    $response["success"] = 0;
     $response["message"] = $messageNotOk;
     echo json_encode($response, JSON_UNESCAPED_UNICODE);
 }

@@ -14,7 +14,7 @@ $result2 = mysqli_query($con, "SELECT * FROM drugsturkey") or die(mysqli_error($
 $result3 = mysqli_query($con, "SELECT * FROM drugsusa") or die(mysqli_error($con));
 if (mysqli_num_rows($result1) > 0 || mysqli_num_rows($result2) > 0 || mysqli_num_rows($result3) > 0) {
 
-	$response["success"] = "1";
+	$response["success"] = 1;
 	$response["message"] = $messageOk;
 
 	$response["drugs"] = array();
@@ -45,7 +45,7 @@ if (mysqli_num_rows($result1) > 0 || mysqli_num_rows($result2) > 0 || mysqli_num
 
     echo json_encode($response, JSON_UNESCAPED_UNICODE);
 } else {
-    $response["success"] = "0";
+    $response["success"] = 0;
     $response["message"] = $messageAllNotOk;
 
     echo json_encode($response, JSON_UNESCAPED_UNICODE);

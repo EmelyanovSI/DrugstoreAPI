@@ -55,7 +55,7 @@ if (isset($_GET['name'])) {
 
     if (!empty($composition)) {
 		
-		$response["success"] = "1";
+		$response["success"] = 1;
         $response["message"] = $messageFined;
 		
         foreach ($composition as $value) {
@@ -98,16 +98,16 @@ if (isset($_GET['name'])) {
         }
         echo json_encode($response, JSON_UNESCAPED_UNICODE);
     } elseif (empty($composition)) {
-        $response["success"] = "1";
+        $response["success"] = 1;
         $response["message"] = $messageFinedNull;
         echo json_encode($response, JSON_UNESCAPED_UNICODE);
     } else {
-        $response["success"] = "0";
+        $response["success"] = 0;
         $response["message"] = $error;
         echo json_encode($response, JSON_UNESCAPED_UNICODE);
     }
 } else {
-    $response["success"] = "0";
+    $response["success"] = 0;
     $response["message"] = $messageNotOk;
     echo json_encode($response, JSON_UNESCAPED_UNICODE);
 }
