@@ -20,7 +20,7 @@ if (mysqli_num_rows($result1) > 0 || mysqli_num_rows($result2) > 0 || mysqli_num
 	$response["drugs"] = array();
     while ($row = mysqli_fetch_array($result1)) {
         $drug = array();
-        $drug["id"] = $row["id"];
+        $drug["id"] = intval($row["id"]);
         $drug["name"] = $row["name"];
         $drug["composition"] = $row["composition"];
         $drug["country"] = "Беларусь";
@@ -28,7 +28,7 @@ if (mysqli_num_rows($result1) > 0 || mysqli_num_rows($result2) > 0 || mysqli_num
     }
     while ($row = mysqli_fetch_array($result2)) {
         $drug = array();
-        $drug["id"] = $row["id"];
+        $drug["id"] = intval($row["id"]);
         $drug["name"] = $row["name"];
         $drug["composition"] = $row["composition"];
 		$drug["country"] = "Турция";
@@ -36,7 +36,7 @@ if (mysqli_num_rows($result1) > 0 || mysqli_num_rows($result2) > 0 || mysqli_num
     }
     while ($row = mysqli_fetch_array($result3)) {
         $drug = array();
-        $drug["id"] = $row["id"];
+        $drug["id"] = intval($row["id"]);
         $drug["name"] = $row["name"];
         $drug["composition"] = $row["composition"];
 		$drug["country"] = "США";

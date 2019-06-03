@@ -63,7 +63,7 @@ if (isset($_GET['name'])) {
             or die(mysqli_error($con));
             while ($row = mysqli_fetch_array($result1)) {
                 $drug = array();
-                $drug["id"] = $row["id"];
+                $drug["id"] = intval($row["id"]);
                 $drug["name"] = $row["name"];
                 $drug["composition"] = $row["composition"];
                 $drug["country"] = "Беларусь";
@@ -76,7 +76,7 @@ if (isset($_GET['name'])) {
             or die(mysqli_error($con));
             while ($row = mysqli_fetch_array($result2)) {
                 $drug = array();
-                $drug["id"] = $row["id"];
+                $drug["id"] = intval($row["id"]);
                 $drug["name"] = $row["name"];
                 $drug["composition"] = $row["composition"];
                 $drug["country"] = "Турция";
@@ -89,7 +89,7 @@ if (isset($_GET['name'])) {
             or die(mysqli_error($con));
             while ($row = mysqli_fetch_array($result3)) {
                 $drug = array();
-                $drug["id"] = $row["id"];
+                $drug["id"] = intval($row["id"]);
                 $drug["name"] = $row["name"];
                 $drug["composition"] = $row["composition"];
                 $drug["country"] = "США";
