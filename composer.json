@@ -1,5 +1,10 @@
 {
   "scripts": {
     "test": ""
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": "src/"
+    }
   }
 }
