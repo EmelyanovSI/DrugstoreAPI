@@ -4,14 +4,15 @@ header('Content-Type: text/html; charset=utf-8');
 
 $response = array();
 
-require_once 'strings.php';
+require_once 'res/strings.php';
 
-if (isset($_GET['id']) && isset($_GET['country'])) {
+if (isset($_GET['name']) && isset($_GET['composition']) && isset($_GET['country'])) {
 
-    $id = $_GET['id'];
+    $name = $_GET['name'];
+    $composition = $_GET['composition'];
     $country = $_GET['country'];
 
-    require_once 'db_connect.php';
+    require_once 'config/db_connect.php';
 
     $db = new DB_CONNECT();
     $con = $db->connect();
@@ -30,15 +31,15 @@ if (isset($_GET['id']) && isset($_GET['country'])) {
             $country = 'drugsbel';
     }
 
-    $sql = "DELETE FROM " . $country . " WHERE id='" . $id . "'";
+    $sql = "INSERT INTO " . $country . "(name, composition) VALUES('$name', '$composition')";
     $result = mysqli_query($con, $sql) or die(mysqli_error($con));
 
     if ($result) {
         $response['success'] = 1;
-        $response['message'] = $deleted;
+        $response['message'] = $created;
     } else {
         $response['success'] = 0;
-        $response['message'] = $notDeleted;
+        $response['message'] = $notCreated;
     }
 } else {
     $response['success'] = 0;
