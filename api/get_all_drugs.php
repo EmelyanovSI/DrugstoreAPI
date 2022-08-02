@@ -3,11 +3,11 @@
 header('Content-Type: text/html; charset=utf-8');
 
 $response = array();
-require_once './src/config/db_connect.php';
+require_once 'db_connect.php';
 $db = new DB_CONNECT();
 $con = $db->connect();
 
-require_once './src/resources/strings.php';
+require_once 'strings.php';
 
 /**
  * @param mysqli $con
