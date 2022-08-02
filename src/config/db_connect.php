@@ -23,7 +23,7 @@ class DB_CONNECT
         )
         or die(mysqli_error($con));
 
-        mysqli_set_charset($con, "utf8");
+        mysqli_set_charset($con, 'utf8');
 
         $db = mysqli_select_db($con, DB_DATABASE) or die(mysqli_error($con)) or die(mysqli_error($con));
 
